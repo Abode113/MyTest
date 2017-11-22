@@ -1,106 +1,27 @@
-lex::lex::USING
-lex::IDENTIFIER System
-lex::Semicolon
-yacc::Semicolon10
-lex::lex::NAMESPACE
-lex::IDENTIFIER RectangleApplication
-lex::OpenBracket_T1
+lex::PUBLIC
 lex::CLASS
-Yacc::Class
-lex::IDENTIFIER Rectangle
+lex::NO_IDENTIFIER 1s
 lex::OpenBracket_T1
 ---
-lex::It Is A Single Line Comment
-lex::DOUBLE
-lex::IDENTIFIER length
-ggG
-lex::Semicolon
-yacc::Semicolon12
-lex::DOUBLE
-lex::IDENTIFIER width
-ggG
-lex::Semicolon
-yacc::Semicolon12
-lex::PUBLIC
 lex::VOID
-lex::IDENTIFIER Acceptdetails
+lex::IDENTIFIER main
 yacc:void6
 lex::OpenBracket
 lex::CloseBracket
 lex::OpenBracket_T1
-lex::It Is A Single Line Comment
-lex::It Is A Single Line Comment
-lex::CloseBracket_T1
-lex::PUBLIC
-lex::DOUBLE
-lex::IDENTIFIER GetArea
-ggG
+lex::lex::If
 lex::OpenBracket
+lex::IDENTIFIER x
+lex::Greater
+lex::INTEGER_LITERAL1
 lex::CloseBracket
 lex::OpenBracket_T1
-lex::RETURN
-lex::IDENTIFIER length
-lex::Multiple_N1
-lex::IDENTIFIER width
-lex::Semicolon
-yacc::Semicolon6
+lex::CloseBracket_T1
+lex::ELSE
+lex::OpenBracket_T1
+lex::CloseBracket_T1
 yacc::embedded_statement
 lex::CloseBracket_T1
 lex::CloseBracket_T1
 ---
-lex::CLASS
-Yacc::Class
-lex::IDENTIFIER ExecuteRectangle
-lex::OpenBracket_T1
----
-lex::STATIC
-lex::VOID
-lex::IDENTIFIER Main
-yacc:void6
-lex::OpenBracket
-lex::STRING
-[]lex::IDENTIFIER args
-ggG
-lex::CloseBracket
-lex::OpenBracket_T1
-lex::IDENTIFIER Rectangle
-lex::IDENTIFIER r
-ggG
-lex::Equal
-lex::NEW
-lex::IDENTIFIER Rectangle
-lex::OpenBracket
-ggG
-lex::CloseBracket
-lex::Semicolon
-yacc::Semicolon22
-yacc::declaration_statement
-lex::IDENTIFIER r
-lex::Dot
-lex::IDENTIFIER Acceptdetails
-lex::OpenBracket
-lex::CloseBracket
-lex::Semicolon
-yacc::Semicolon24
-yacc::embedded_statement
-lex::IDENTIFIER r
-lex::Dot
-lex::IDENTIFIER Display
-lex::OpenBracket
-lex::CloseBracket
-lex::Semicolon
-yacc::Semicolon24
-yacc::embedded_statement
-lex::IDENTIFIER Console
-lex::Dot
-lex::IDENTIFIER ReadLine
-lex::OpenBracket
-lex::CloseBracket
-lex::Semicolon
-yacc::Semicolon24
-yacc::embedded_statement
-lex::CloseBracket_T1
-lex::CloseBracket_T1
----
-lex::CloseBracket_T1
-yacc::start
+Error: [1,16]   Error:Name Error,   

@@ -24,6 +24,7 @@
     <None Include="..\yacc.output">
       <Filter>Source Files</Filter>
     </None>
+    <None Include="code.cs" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\lex.yy.cc">

@@ -22,7 +22,8 @@ Float					[-+]?[0-9]+\.?[0-9]+
 Integer					[-+]?[1-9][0-9]*|0
 Char					"'"."'"
 Identifier              [a-zA-Z_][a-zA-Z0-9_]*
-Identifierr              [a-zA-Z_][a-zA-Z0-9_]*"("
+NoId                    [0-9][a-zA-Z_][a-zA-Z0-9_]*
+
 
 %%
 
@@ -766,6 +767,14 @@ Identifierr              [a-zA-Z_][a-zA-Z0-9_]*"("
 	fout << "lex::IDENTIFIER " << yytext << endl;
 	cout << "lex::IDENTIFIER " << yytext << endl;
 	return IDENTIFIER;
+}
+{NoId} {
+	colNo += strlen(yytext); 
+	yylval.r.myLineNo= lineNo; 
+	yylval.r.myColno = colNo;
+	fout << "lex::NO_IDENTIFIER " << yytext << endl;
+	cout << "lex::NO_IDENTIFIER " << yytext << endl;
+	return NoId;
 }
 
 

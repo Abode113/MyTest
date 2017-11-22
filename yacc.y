@@ -6,12 +6,14 @@
 	#define YYDEBUG 1
 	using namespace std;
 	#include <FlexLexer.h>
+	#include "ErrorRecovery.h"
+
 	int yylex(void);
 	int yyparse();
 	void yyerror(char *);
 	
 	FlexLexer* lexer = new yyFlexLexer();
-	
+	ErrorRecovery* error = new ErrorRecovery();
 	class Parser
 	{
 		public:
@@ -27,7 +29,9 @@
 %token RANK_SPECIFIER
 
 /* C.1.4 Tokens */
-%token IDENTIFIER 
+%token IDENTIFIER
+%token NoId 
+%token Space
 %token INTEGER_LITERAL REAL_LITERAL CHARACTER_LITERAL STRING_LITERAL
 
 
@@ -70,6 +74,10 @@
 
 %token CloseBracket Multiple_N1 PercenSign Division Dash Plus_S Maddeh Colon Semicolon OpenBracket_T1 OpenBracket Dot
 %token Less Greater And Shapo Vertical_Mark Ta3ajob Quest_Mark Equal CloseBracket_T1
+
+
+%nonassoc "then"
+%nonassoc ELSE
 
 %start compilation_unit  
 %union{
@@ -475,9 +483,11 @@ selection_statement
   : if_statement
   | switch_statement
   ;
-if_statement
-  : IF OpenBracket boolean_expression CloseBracket embedded_statement
-  | IF OpenBracket boolean_expression CloseBracket embedded_statement ELSE embedded_statement
+  if_statement    
+  :  IF OpenBracket boolean_expression CloseBracket embedded_statement  %prec "then"
+  |  IF OpenBracket boolean_expression CloseBracket embedded_statement    ELSE embedded_statement  
+  |   ELSE embedded_statement 
+  { error->errQ->enqueue($<r.myLineNo>1 , $<r.myColno>1 , "Error:you should add if "," "); error->printErrQueue(); exit(1); }
   ;
 switch_statement
   : SWITCH OpenBracket expression CloseBracket switch_block
@@ -730,7 +740,10 @@ modifier
   ;
 /***** C.2.6 Classes *****/
 class_declaration
-  : attributes_opt modifiers_opt CLASS{ cout<<"Yacc::Class"<<endl;} IDENTIFIER class_base_opt class_body comma_opt
+  : attributes_opt modifiers_opt CLASS{ cout<<"Yacc::Class"<<endl;} IDENTIFIER class_base_opt class_body comma_opt 
+ 
+  | attributes_opt modifiers_opt CLASS NoId class_base_opt class_body comma_opt 
+  { error->errQ->enqueue($<r.myLineNo>4 , $<r.myColno>4 , "Error:Name Error"," "); error->printErrQueue(); exit(1); }
   ;
 class_base_opt
   : /* Nothing */
@@ -1182,7 +1195,7 @@ int yylex()
 void main(void)
 {
 	yydebug = 1;
-	freopen("code.txt","r",stdin);
+	freopen("code.cs","r",stdin);
    	freopen("out.txt","w",stdout);
 	Parser* p = new Parser();
 	p->parse();

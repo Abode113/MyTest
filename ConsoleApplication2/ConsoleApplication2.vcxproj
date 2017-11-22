@@ -79,6 +79,7 @@
     <None Include="..\lex.l" />
     <None Include="..\yacc.output" />
     <None Include="..\yacc.y" />
+    <None Include="code.cs" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\lex.yy.cc" />

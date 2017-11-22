@@ -1,74 +1,21 @@
-lex::lex::USING
-lex::IDENTIFIER System
-lex::Semicolon
-lex::lex::NAMESPACE
-lex::IDENTIFIER RectangleApplication
-lex::OpenBracket_T1
-lex::CLASS
-lex::IDENTIFIER Rectangle
-lex::OpenBracket_T1
-lex::DOUBLE
-lex::IDENTIFIER length
-lex::Semicolon
-lex::DOUBLE
-lex::IDENTIFIER width
-lex::Semicolon
 lex::PUBLIC
-lex::VOID
-lex::IDENTIFIER Acceptdetails
-lex::OpenBracket
-lex::CloseBracket
-lex::OpenBracket_T1
-lex::CloseBracket_T1
-lex::PUBLIC
-lex::DOUBLE
-lex::IDENTIFIER GetArea
-lex::OpenBracket
-lex::CloseBracket
-lex::OpenBracket_T1
-lex::RETURN
-lex::IDENTIFIER length
-lex::Multiple_N1
-lex::IDENTIFIER width
-lex::Semicolon
-lex::CloseBracket_T1
-lex::CloseBracket_T1
 lex::CLASS
-lex::IDENTIFIER ExecuteRectangle
+lex::NO_IDENTIFIER 1s
 lex::OpenBracket_T1
-lex::STATIC
 lex::VOID
-lex::IDENTIFIER Main
+lex::IDENTIFIER main
 lex::OpenBracket
-lex::STRING
-lex::IDENTIFIER args
 lex::CloseBracket
 lex::OpenBracket_T1
-lex::IDENTIFIER Rectangle
-lex::IDENTIFIER r
-lex::NEW
-lex::IDENTIFIER Rectangle
 lex::OpenBracket
+lex::IDENTIFIER x
+lex::Greater
+lex::INTEGER_LITERAL1
 lex::CloseBracket
-lex::Semicolon
-lex::IDENTIFIER r
-lex::Dot
-lex::IDENTIFIER Acceptdetails
-lex::OpenBracket
-lex::CloseBracket
-lex::Semicolon
-lex::IDENTIFIER r
-lex::Dot
-lex::IDENTIFIER Display
-lex::OpenBracket
-lex::CloseBracket
-lex::Semicolon
-lex::IDENTIFIER Console
-lex::Dot
-lex::IDENTIFIER ReadLine
-lex::OpenBracket
-lex::CloseBracket
-lex::Semicolon
+lex::OpenBracket_T1
+lex::CloseBracket_T1
+lex::ELSE
+lex::OpenBracket_T1
 lex::CloseBracket_T1
 lex::CloseBracket_T1
 lex::CloseBracket_T1

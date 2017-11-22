@@ -249,37 +249,37 @@ typedef unsigned char YY_CHAR;
 	*yy_cp = '\0'; \
 	yy_c_buf_p = yy_cp;
 
-#define YY_NUM_RULES 91
-#define YY_END_OF_BUFFER 92
-static yyconst short int yy_accept[242] =
+#define YY_NUM_RULES 92
+#define YY_END_OF_BUFFER 93
+static yyconst short int yy_accept[244] =
     {   0,
-        0,    0,   80,   80,   84,   84,   92,   91,   37,   38,
-       59,   83,   53,   63,   91,   55,   56,   50,   39,   46,
-       45,   51,   88,   88,   43,   44,   57,   64,   58,   62,
+        0,    0,   80,   80,   84,   84,   93,   92,   37,   38,
+       59,   83,   53,   63,   92,   55,   56,   50,   39,   46,
+       45,   51,   89,   89,   43,   44,   57,   64,   58,   62,
        87,   61,   87,   87,   87,   87,   87,   87,   87,   87,
        87,   87,   87,   87,   87,   87,   87,   87,   65,   60,
-       66,   42,   80,   81,   84,   85,   91,   74,   54,   77,
-       78,    0,   49,   41,    0,   88,   40,   48,   47,   79,
-       86,   52,    0,   89,   88,   69,   75,   73,   76,   70,
-       87,   67,   87,   87,   87,   87,   87,   87,   87,   87,
-        6,   87,   87,   87,    3,   87,   87,   87,   87,   87,
+       66,   42,   80,   81,   84,   85,   92,   74,   54,   77,
+       78,    0,   49,   41,    0,   89,   40,   48,   47,   79,
+       86,   52,    0,   90,   88,   89,   69,   75,   73,   76,
+       70,   87,   67,   87,   87,   87,   87,   87,   87,   87,
+       87,    6,   87,   87,   87,    3,   87,   87,   87,   87,
 
        87,   87,   87,   87,   87,   87,   87,   87,   87,   87,
-       87,   68,   80,   81,   81,   82,   84,    0,   90,   86,
-       86,   89,   72,   71,   87,   87,   87,   87,   87,   87,
-       87,   87,   87,   87,   87,   87,    7,   26,   87,   87,
-       13,   87,   87,   87,   87,   87,   87,   87,   87,   87,
-       24,   87,   87,   87,   87,   86,   87,   33,   87,   18,
-       87,   31,   87,   87,   87,   87,    4,   87,   87,   87,
-       28,   87,   87,   87,   87,   87,   87,   87,   87,   87,
-       87,   87,   87,   87,   23,   87,   87,   20,   25,   11,
-       22,   87,   87,   29,   87,   87,   87,   87,   87,   87,
+       87,   87,   68,   80,   81,   81,   82,   84,    0,   91,
+       86,   86,   90,   88,   72,   71,   87,   87,   87,   87,
+       87,   87,   87,   87,   87,   87,   87,   87,    7,   26,
+       87,   87,   13,   87,   87,   87,   87,   87,   87,   87,
+       87,   87,   24,   87,   87,   87,   87,   86,   87,   33,
+       87,   18,   87,   31,   87,   87,   87,   87,    4,   87,
+       87,   87,   28,   87,   87,   87,   87,   87,   87,   87,
+       87,   87,   87,   87,   87,   87,   23,   87,   87,   20,
+       25,   11,   22,   87,   87,   29,   87,   87,   87,   87,
 
-       87,   27,   87,   87,   87,   87,   87,   87,    1,    5,
-       87,   87,   30,   87,   87,   87,   87,   87,   14,   34,
-       35,   21,   32,   12,   17,   36,   87,   19,    8,   87,
-       87,   15,   87,   10,   87,   87,   87,    9,    2,   16,
-        0
+       87,   87,   87,   27,   87,   87,   87,   87,   87,   87,
+        1,    5,   87,   87,   30,   87,   87,   87,   87,   87,
+       14,   34,   35,   21,   32,   12,   17,   36,   87,   19,
+        8,   87,   87,   15,   87,   10,   87,   87,   87,    9,
+        2,   16,    0
     } ;
 
 static yyconst int yy_ec[256] =
@@ -317,119 +317,122 @@ static yyconst int yy_ec[256] =
 static yyconst int yy_meta[54] =
     {   0,
         1,    2,    1,    1,    3,    1,    1,    1,    1,    1,
-        4,    1,    1,    1,    1,    5,    5,    1,    1,    1,
-        1,    1,    1,    5,    1,    1,    5,    5,    5,    5,
-        5,    5,    5,    5,    5,    5,    5,    5,    5,    5,
-        5,    5,    5,    5,    5,    5,    5,    5,    5,    1,
+        4,    1,    1,    5,    1,    6,    6,    1,    1,    1,
+        1,    1,    1,    6,    1,    1,    6,    6,    6,    6,
+        6,    6,    6,    6,    6,    6,    6,    6,    6,    6,
+        6,    6,    6,    6,    6,    6,    6,    6,    6,    1,
         1,    1,    1
     } ;
 
-static yyconst short int yy_base[250] =
+static yyconst short int yy_base[254] =
     {   0,
-        0,    0,   52,   53,   51,   52,  300,  301,  301,  301,
-      278,  301,  277,   51,    0,  301,  301,  276,   49,   58,
-      301,   67,   67,   73,  301,  301,   39,  275,   46,  301,
-        0,  274,  266,   51,   58,   63,  256,   59,   30,  252,
-       70,   60,  260,   72,   38,  247,  249,  254,  301,  266,
-      301,  301,    0,   89,  261,  301,  106,  301,  301,  301,
-      301,  277,  301,  272,   96,  101,  301,  301,  301,  301,
-      268,  301,  104,  108,  112,  261,  301,  301,  301,  260,
-        0,  301,  237,  239,  247,   87,  250,  249,  236,  242,
-      228,  229,  231,  228,    0,  225,  229,  229,  219,   74,
+        0,    0,   52,   53,   51,   52,  310,  311,  311,  311,
+      288,  311,  287,   51,    0,  311,  311,  286,   49,   58,
+      311,   67,   67,   73,  311,  311,   39,  285,   46,  311,
+        0,  284,  276,   51,   58,   63,  266,   59,   30,  262,
+       70,   60,  270,   72,   38,  257,  259,  264,  311,  276,
+      311,  311,    0,   89,  271,  311,  106,  311,  311,  311,
+      311,  287,  311,  282,   96,  101,  311,  311,  311,  311,
+      278,  311,  104,  108,    0,  112,  271,  311,  311,  311,
+      270,    0,  311,  247,  249,  257,   87,  260,  259,  246,
+      252,  238,  239,  241,  238,    0,  235,  239,  239,  229,
 
-      237,  220,  223,  213,   96,  226,  212,  218,  223,  222,
-      221,  301,    0,  121,  122,  301,  230,  137,  301,    0,
-      239,  118,  301,  301,  209,  215,  224,  219,  220,  206,
-      204,  203,  200,  216,  212,  215,  210,  209,  206,  207,
-        0,  191,  192,  198,  189,  191,  201,  187,  105,  186,
-        0,  198,  189,  197,  189,  210,  182,    0,  187,    0,
-      188,    0,  178,  176,  192,  181,    0,  173,  189,  173,
-        0,  171,  186,  181,  176,  168,  165,  168,  172,  167,
-      176,  175,  163,  169,    0,  170,  173,    0,    0,    0,
-        0,  162,  167,    0,  168,  164,  154,  150,  164,  163,
+       74,  247,  230,  233,  223,   96,  236,  222,  228,  233,
+      232,  231,  311,    0,  121,  122,  311,  240,  137,  311,
+        0,  249,  118,    0,  311,  311,  219,  225,  234,  229,
+      230,  216,  214,  213,  210,  226,  222,  225,  220,  219,
+      216,  217,    0,  201,  202,  208,  199,  201,  211,  197,
+      105,  196,    0,  208,  199,  207,  199,  220,  192,    0,
+      197,    0,  198,    0,  188,  186,  202,  191,    0,  183,
+      199,  183,    0,  181,  196,  191,  186,  178,  175,  178,
+      182,  177,  186,  185,  173,  179,    0,  180,  183,    0,
+        0,    0,    0,  172,  177,    0,  178,  174,  164,  160,
 
-      152,    0,  158,  160,  155,  143,  152,  150,    0,    0,
-      149,  128,    0,  135,  140,  135,  118,  104,    0,    0,
-        0,    0,    0,    0,    0,    0,  103,    0,    0,  117,
-      116,    0,  113,    0,  112,  110,   97,    0,    0,    0,
-      301,  150,  155,  160,   68,  165,  170,  175,  180
+      174,  173,  162,    0,  168,  170,  165,  153,  162,  163,
+        0,    0,  161,  141,    0,  144,  147,  145,  133,  105,
+        0,    0,    0,    0,    0,    0,    0,    0,  104,    0,
+        0,  118,  117,    0,  114,    0,  113,  112,  111,    0,
+        0,    0,  311,  150,  156,  162,  164,  121,  170,  176,
+      182,  188,   67
     } ;
 
-static yyconst short int yy_def[250] =
+static yyconst short int yy_def[254] =
     {   0,
-      241,    1,  242,  242,  243,  243,  241,  241,  241,  241,
-      241,  241,  241,  241,  244,  241,  241,  241,  241,  241,
-      241,  241,  241,  241,  241,  241,  241,  241,  241,  241,
-      245,  241,  245,  245,  245,  245,  245,  245,  245,  245,
-      245,  245,  245,  245,  245,  245,  245,  245,  241,  241,
-      241,  241,  246,  247,  248,  241,  248,  241,  241,  241,
-      241,  241,  241,  241,  241,  241,  241,  241,  241,  241,
-      249,  241,  241,  241,  241,  241,  241,  241,  241,  241,
-      245,  241,  245,  245,  245,  245,  245,  245,  245,  245,
-      245,  245,  245,  245,  245,  245,  245,  245,  245,  245,
+      243,    1,  244,  244,  245,  245,  243,  243,  243,  243,
+      243,  243,  243,  243,  246,  243,  243,  243,  243,  243,
+      243,  243,  247,  247,  243,  243,  243,  243,  243,  243,
+      248,  243,  248,  248,  248,  248,  248,  248,  248,  248,
+      248,  248,  248,  248,  248,  248,  248,  248,  243,  243,
+      243,  243,  249,  250,  251,  243,  251,  243,  243,  243,
+      243,  243,  243,  243,  243,  243,  243,  243,  243,  243,
+      252,  243,  243,  243,  253,  243,  243,  243,  243,  243,
+      243,  248,  243,  248,  248,  248,  248,  248,  248,  248,
+      248,  248,  248,  248,  248,  248,  248,  248,  248,  248,
 
-      245,  245,  245,  245,  245,  245,  245,  245,  245,  245,
-      245,  241,  246,  247,  247,  241,  248,  248,  241,  249,
-      249,  241,  241,  241,  245,  245,  245,  245,  245,  245,
-      245,  245,  245,  245,  245,  245,  245,  245,  245,  245,
-      245,  245,  245,  245,  245,  245,  245,  245,  245,  245,
-      245,  245,  245,  245,  245,  249,  245,  245,  245,  245,
-      245,  245,  245,  245,  245,  245,  245,  245,  245,  245,
-      245,  245,  245,  245,  245,  245,  245,  245,  245,  245,
-      245,  245,  245,  245,  245,  245,  245,  245,  245,  245,
-      245,  245,  245,  245,  245,  245,  245,  245,  245,  245,
+      248,  248,  248,  248,  248,  248,  248,  248,  248,  248,
+      248,  248,  243,  249,  250,  250,  243,  251,  251,  243,
+      252,  252,  243,  253,  243,  243,  248,  248,  248,  248,
+      248,  248,  248,  248,  248,  248,  248,  248,  248,  248,
+      248,  248,  248,  248,  248,  248,  248,  248,  248,  248,
+      248,  248,  248,  248,  248,  248,  248,  252,  248,  248,
+      248,  248,  248,  248,  248,  248,  248,  248,  248,  248,
+      248,  248,  248,  248,  248,  248,  248,  248,  248,  248,
+      248,  248,  248,  248,  248,  248,  248,  248,  248,  248,
+      248,  248,  248,  248,  248,  248,  248,  248,  248,  248,
 
-      245,  245,  245,  245,  245,  245,  245,  245,  245,  245,
-      245,  245,  245,  245,  245,  245,  245,  245,  245,  245,
-      245,  245,  245,  245,  245,  245,  245,  245,  245,  245,
-      245,  245,  245,  245,  245,  245,  245,  245,  245,  245,
-        0,  241,  241,  241,  241,  241,  241,  241,  241
+      248,  248,  248,  248,  248,  248,  248,  248,  248,  248,
+      248,  248,  248,  248,  248,  248,  248,  248,  248,  248,
+      248,  248,  248,  248,  248,  248,  248,  248,  248,  248,
+      248,  248,  248,  248,  248,  248,  248,  248,  248,  248,
+      248,  248,    0,  243,  243,  243,  243,  243,  243,  243,
+      243,  243,  243
     } ;
 
-static yyconst short int yy_nxt[355] =
+static yyconst short int yy_nxt[365] =
     {   0,
         8,    9,   10,   11,   12,   13,   14,   15,   16,   17,
        18,   19,   20,   21,   22,   23,   24,   25,   26,   27,
        28,   29,   30,   31,    8,   32,   33,   34,   35,   36,
        37,   38,   31,   31,   39,   31,   40,   31,   41,   31,
        42,   43,   44,   45,   46,   47,   48,   31,   31,   49,
-       50,   51,   52,    8,    8,   56,   56,   60,   76,   77,
-       64,   95,   54,   54,   65,   66,   79,   80,   96,   67,
-       68,   61,   81,   65,   66,   57,   57,   70,   69,  107,
-       73,   71,   74,   74,   86,  108,   73,   72,   75,   75,
-       84,   87,   85,   90,   88,   93,   98,   89,   94,  115,
+       50,   51,   52,    8,    8,   56,   56,   60,   77,   78,
+       64,   96,   54,   54,   65,   66,   80,   81,   97,   67,
+       68,   61,  124,   65,   66,   57,   57,   70,   69,  108,
+       73,   71,   74,   74,   87,  109,   73,   72,   76,   76,
+       85,   88,   86,   91,   89,   94,   99,   90,   95,  116,
 
-       99,  100,   91,  116,  101,  103,  104,  241,  142,   73,
-      117,   74,   74,  143,   73,  105,   75,   75,  106,  122,
-      122,   73,  148,   74,   74,   73,  240,   75,   75,  128,
-      129,  241,  115,  122,  122,  241,  116,  149,  241,  180,
-      239,  117,  238,  237,  236,  235,  234,  233,  232,  181,
-       53,   53,   53,   53,   53,   55,   55,   55,   55,   55,
-       62,  231,   62,   62,   62,  113,  230,  113,  229,  113,
-      114,  228,  114,  114,  114,  117,  117,  227,  117,  117,
-      120,  226,  120,  120,  120,  225,  224,  223,  222,  221,
-      220,  219,  218,  217,  216,  215,  214,  213,  212,  211,
+      100,  101,   92,  117,  102,  104,  105,  243,  144,   73,
+      118,   74,   74,  145,   73,  106,   76,   76,  107,  123,
+      123,   73,  150,   74,   74,   73,   82,   76,   76,  130,
+      131,  243,  116,  123,  123,  243,  117,  151,  243,  182,
+      242,  118,  241,  240,  239,  238,  237,  236,  235,  183,
+       53,   53,   53,   53,   53,   53,   55,   55,   55,   55,
+       55,   55,   62,  234,   62,   62,   62,   62,   75,   75,
+      114,  233,  114,  232,  114,  114,  115,  231,  115,  115,
+      115,  115,  118,  118,  230,  118,  118,  118,  121,  229,
+      121,  121,  121,  121,  228,  227,  226,  225,  224,  223,
 
-      210,  209,  208,  207,  206,  205,  204,  203,  202,  201,
-      200,  199,  198,  197,  196,  195,  194,  193,  192,  191,
-      190,  189,  188,  187,  121,  186,  185,  184,  183,  182,
-      179,  178,  177,  176,  175,  174,  173,  172,  171,  170,
-      169,  168,  167,  166,  165,  164,  163,  162,  161,  160,
-      159,  158,  157,  156,  118,  155,  154,  153,  152,  151,
-      150,  147,  146,  145,  144,  141,  140,  139,  138,  137,
-      136,  135,  134,  133,  132,  131,  130,  127,  126,  125,
-      124,  123,  121,   64,  119,  118,  112,  111,  110,  109,
-      102,   97,   92,   83,   82,   78,   63,   59,   58,  241,
+      222,  221,  220,  219,  218,  217,  216,  215,  214,  213,
+      212,  211,  210,  209,  208,  207,  206,  205,  204,  203,
+      202,  201,  200,  199,  198,  197,  196,  195,  194,  193,
+      192,  191,  190,  189,  122,  188,  187,  186,  185,  184,
+      181,  180,  179,  178,  177,  176,  175,  174,  173,  172,
+      171,  170,  169,  168,  167,  166,  165,  164,  163,  162,
+      161,  160,  159,  158,  119,  157,  156,  155,  154,  153,
+      152,  149,  148,  147,  146,  143,  142,  141,  140,  139,
+      138,  137,  136,  135,  134,  133,  132,  129,  128,  127,
+      126,  125,  122,   64,  120,  119,  113,  112,  111,  110,
 
-        7,  241,  241,  241,  241,  241,  241,  241,  241,  241,
-      241,  241,  241,  241,  241,  241,  241,  241,  241,  241,
-      241,  241,  241,  241,  241,  241,  241,  241,  241,  241,
-      241,  241,  241,  241,  241,  241,  241,  241,  241,  241,
-      241,  241,  241,  241,  241,  241,  241,  241,  241,  241,
-      241,  241,  241,  241
+      103,   98,   93,   84,   83,   79,   63,   59,   58,  243,
+        7,  243,  243,  243,  243,  243,  243,  243,  243,  243,
+      243,  243,  243,  243,  243,  243,  243,  243,  243,  243,
+      243,  243,  243,  243,  243,  243,  243,  243,  243,  243,
+      243,  243,  243,  243,  243,  243,  243,  243,  243,  243,
+      243,  243,  243,  243,  243,  243,  243,  243,  243,  243,
+      243,  243,  243,  243
     } ;
 
-static yyconst short int yy_chk[355] =
+static yyconst short int yy_chk[365] =
     {   0,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
@@ -438,38 +441,39 @@ static yyconst short int yy_chk[355] =
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    3,    4,    5,    6,   14,   27,   27,
        19,   39,    3,    4,   19,   19,   29,   29,   39,   19,
-       20,   14,  245,   20,   20,    5,    6,   22,   20,   45,
+       20,   14,  253,   20,   20,    5,    6,   22,   20,   45,
        23,   22,   23,   23,   35,   45,   24,   22,   24,   24,
        34,   35,   34,   36,   35,   38,   41,   35,   38,   54,
 
-       41,   42,   36,   54,   42,   44,   44,   57,  100,   65,
-       57,   65,   65,  100,   66,   44,   66,   66,   44,   73,
-       73,   74,  105,   74,   74,   75,  237,   75,   75,   86,
-       86,  114,  115,  122,  122,  114,  115,  105,  118,  149,
-      236,  118,  235,  233,  231,  230,  227,  218,  217,  149,
-      242,  242,  242,  242,  242,  243,  243,  243,  243,  243,
-      244,  216,  244,  244,  244,  246,  215,  246,  214,  246,
-      247,  212,  247,  247,  247,  248,  248,  211,  248,  248,
-      249,  208,  249,  249,  249,  207,  206,  205,  204,  203,
-      201,  200,  199,  198,  197,  196,  195,  193,  192,  187,
+       41,   42,   36,   54,   42,   44,   44,   57,  101,   65,
+       57,   65,   65,  101,   66,   44,   66,   66,   44,   73,
+       73,   74,  106,   74,   74,   76,  248,   76,   76,   87,
+       87,  115,  116,  123,  123,  115,  116,  106,  119,  151,
+      239,  119,  238,  237,  235,  233,  232,  229,  220,  151,
+      244,  244,  244,  244,  244,  244,  245,  245,  245,  245,
+      245,  245,  246,  219,  246,  246,  246,  246,  247,  247,
+      249,  218,  249,  217,  249,  249,  250,  216,  250,  250,
+      250,  250,  251,  251,  214,  251,  251,  251,  252,  213,
+      252,  252,  252,  252,  210,  209,  208,  207,  206,  205,
 
-      186,  184,  183,  182,  181,  180,  179,  178,  177,  176,
-      175,  174,  173,  172,  170,  169,  168,  166,  165,  164,
-      163,  161,  159,  157,  156,  155,  154,  153,  152,  150,
-      148,  147,  146,  145,  144,  143,  142,  140,  139,  138,
-      137,  136,  135,  134,  133,  132,  131,  130,  129,  128,
-      127,  126,  125,  121,  117,  111,  110,  109,  108,  107,
-      106,  104,  103,  102,  101,   99,   98,   97,   96,   94,
-       93,   92,   91,   90,   89,   88,   87,   85,   84,   83,
-       80,   76,   71,   64,   62,   55,   50,   48,   47,   46,
+      203,  202,  201,  200,  199,  198,  197,  195,  194,  189,
+      188,  186,  185,  184,  183,  182,  181,  180,  179,  178,
+      177,  176,  175,  174,  172,  171,  170,  168,  167,  166,
+      165,  163,  161,  159,  158,  157,  156,  155,  154,  152,
+      150,  149,  148,  147,  146,  145,  144,  142,  141,  140,
+      139,  138,  137,  136,  135,  134,  133,  132,  131,  130,
+      129,  128,  127,  122,  118,  112,  111,  110,  109,  108,
+      107,  105,  104,  103,  102,  100,   99,   98,   97,   95,
+       94,   93,   92,   91,   90,   89,   88,   86,   85,   84,
+       81,   77,   71,   64,   62,   55,   50,   48,   47,   46,
+
        43,   40,   37,   33,   32,   28,   18,   13,   11,    7,
-
-      241,  241,  241,  241,  241,  241,  241,  241,  241,  241,
-      241,  241,  241,  241,  241,  241,  241,  241,  241,  241,
-      241,  241,  241,  241,  241,  241,  241,  241,  241,  241,
-      241,  241,  241,  241,  241,  241,  241,  241,  241,  241,
-      241,  241,  241,  241,  241,  241,  241,  241,  241,  241,
-      241,  241,  241,  241
+      243,  243,  243,  243,  243,  243,  243,  243,  243,  243,
+      243,  243,  243,  243,  243,  243,  243,  243,  243,  243,
+      243,  243,  243,  243,  243,  243,  243,  243,  243,  243,
+      243,  243,  243,  243,  243,  243,  243,  243,  243,  243,
+      243,  243,  243,  243,  243,  243,  243,  243,  243,  243,
+      243,  243,  243,  243
     } ;
 
 /* The intent behind this definition is that it'll catch
@@ -497,7 +501,7 @@ static yyconst short int yy_chk[355] =
 
 #define String 2
 
-#line 500 "lex.yy.cc"
+#line 504 "lex.yy.cc"
 
 /* Macros after this point can all be overridden by user definitions in
  * section 1.
@@ -624,10 +628,10 @@ YY_DECL
 	register char *yy_cp, *yy_bp;
 	register int yy_act;
 
-#line 27 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 28 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 
 
-#line 630 "lex.yy.cc"
+#line 634 "lex.yy.cc"
 
 	if ( yy_init )
 		{
@@ -678,13 +682,13 @@ yy_match:
 			while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 				{
 				yy_current_state = (int) yy_def[yy_current_state];
-				if ( yy_current_state >= 242 )
+				if ( yy_current_state >= 244 )
 					yy_c = yy_meta[(unsigned int) yy_c];
 				}
 			yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
 			++yy_cp;
 			}
-		while ( yy_base[yy_current_state] != 301 );
+		while ( yy_base[yy_current_state] != 311 );
 
 yy_find_action:
 		yy_act = yy_accept[yy_current_state];
@@ -712,7 +716,7 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 29 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 30 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
@@ -724,7 +728,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 37 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 38 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
@@ -736,7 +740,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 46 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 47 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
@@ -747,7 +751,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 53 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 54 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
@@ -759,7 +763,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 62 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 63 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
@@ -771,7 +775,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 71 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 72 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
@@ -783,7 +787,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 80 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 81 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
@@ -795,7 +799,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 89 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 90 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
@@ -807,7 +811,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 98 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 99 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
@@ -819,7 +823,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 107 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 108 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
@@ -831,7 +835,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 116 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 117 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
@@ -843,7 +847,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 125 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 126 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
@@ -855,7 +859,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 134 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 135 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
@@ -867,7 +871,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 143 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 144 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
@@ -879,7 +883,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 152 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 153 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
@@ -891,7 +895,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 161 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 162 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
@@ -903,7 +907,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 172 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 173 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
@@ -915,7 +919,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 181 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 182 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
@@ -927,7 +931,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 190 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 191 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
@@ -939,7 +943,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 199 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 200 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
@@ -951,7 +955,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 208 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 209 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
@@ -963,7 +967,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
-#line 217 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 218 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
@@ -975,7 +979,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
-#line 227 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 228 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
@@ -987,7 +991,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
-#line 236 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 237 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
@@ -999,7 +1003,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
-#line 245 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 246 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
@@ -1011,7 +1015,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
-#line 253 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 254 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
@@ -1023,7 +1027,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 27:
 YY_RULE_SETUP
-#line 262 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 263 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
@@ -1035,7 +1039,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 28:
 YY_RULE_SETUP
-#line 271 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 272 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
@@ -1047,7 +1051,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
-#line 280 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 281 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
@@ -1059,7 +1063,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
-#line 289 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 290 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
@@ -1071,7 +1075,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 31:
 YY_RULE_SETUP
-#line 298 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 299 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
@@ -1083,7 +1087,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 32:
 YY_RULE_SETUP
-#line 307 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 308 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
@@ -1095,7 +1099,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 33:
 YY_RULE_SETUP
-#line 316 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 317 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
@@ -1107,7 +1111,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 34:
 YY_RULE_SETUP
-#line 325 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 326 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
@@ -1119,7 +1123,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 35:
 YY_RULE_SETUP
-#line 335 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 336 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
@@ -1131,7 +1135,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 36:
 YY_RULE_SETUP
-#line 344 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 345 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
@@ -1143,7 +1147,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 37:
 YY_RULE_SETUP
-#line 353 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 354 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	colNo=1;
 	lineNo++;
@@ -1151,14 +1155,14 @@ YY_RULE_SETUP
 	YY_BREAK
 case 38:
 YY_RULE_SETUP
-#line 358 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 359 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	colNo += 1; 
 }
 	YY_BREAK
 case 39:
 YY_RULE_SETUP
-#line 362 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 363 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
@@ -1170,7 +1174,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 40:
 YY_RULE_SETUP
-#line 370 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 371 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
@@ -1182,7 +1186,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 41:
 YY_RULE_SETUP
-#line 379 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 380 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
@@ -1194,7 +1198,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 42:
 YY_RULE_SETUP
-#line 388 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 389 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
@@ -1206,7 +1210,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 43:
 YY_RULE_SETUP
-#line 397 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 398 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
@@ -1218,7 +1222,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 44:
 YY_RULE_SETUP
-#line 406 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 407 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
@@ -1230,7 +1234,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 45:
 YY_RULE_SETUP
-#line 414 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 415 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
@@ -1242,7 +1246,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 46:
 YY_RULE_SETUP
-#line 423 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 424 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
@@ -1254,7 +1258,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 47:
 YY_RULE_SETUP
-#line 432 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 433 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
@@ -1266,7 +1270,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 48:
 YY_RULE_SETUP
-#line 441 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 442 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
@@ -1278,7 +1282,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 49:
 YY_RULE_SETUP
-#line 451 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 452 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
@@ -1290,7 +1294,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 50:
 YY_RULE_SETUP
-#line 460 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 461 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
@@ -1302,7 +1306,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 51:
 YY_RULE_SETUP
-#line 469 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 470 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
@@ -1314,7 +1318,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 52:
 YY_RULE_SETUP
-#line 477 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 478 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
@@ -1326,7 +1330,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 53:
 YY_RULE_SETUP
-#line 486 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 487 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
@@ -1338,7 +1342,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 54:
 YY_RULE_SETUP
-#line 495 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 496 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
@@ -1350,7 +1354,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 55:
 YY_RULE_SETUP
-#line 504 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 505 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
@@ -1362,7 +1366,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 56:
 YY_RULE_SETUP
-#line 513 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 514 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
@@ -1374,7 +1378,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 57:
 YY_RULE_SETUP
-#line 522 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 523 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
@@ -1386,7 +1390,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 58:
 YY_RULE_SETUP
-#line 531 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 532 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
@@ -1398,7 +1402,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 59:
 YY_RULE_SETUP
-#line 539 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 540 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
@@ -1410,7 +1414,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 60:
 YY_RULE_SETUP
-#line 547 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 548 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
@@ -1422,7 +1426,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 61:
 YY_RULE_SETUP
-#line 555 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 556 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
@@ -1434,7 +1438,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 62:
 YY_RULE_SETUP
-#line 563 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 564 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
@@ -1446,7 +1450,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 63:
 YY_RULE_SETUP
-#line 571 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 572 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
@@ -1458,7 +1462,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 64:
 YY_RULE_SETUP
-#line 581 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 582 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
@@ -1469,7 +1473,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 65:
 YY_RULE_SETUP
-#line 589 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 590 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
@@ -1481,7 +1485,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 66:
 YY_RULE_SETUP
-#line 598 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 599 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
@@ -1493,7 +1497,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 67:
 YY_RULE_SETUP
-#line 607 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 608 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
@@ -1505,7 +1509,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 68:
 YY_RULE_SETUP
-#line 616 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 617 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
@@ -1517,7 +1521,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 69:
 YY_RULE_SETUP
-#line 625 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 626 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
@@ -1529,7 +1533,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 70:
 YY_RULE_SETUP
-#line 634 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 635 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
@@ -1541,7 +1545,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 71:
 YY_RULE_SETUP
-#line 643 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 644 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
@@ -1553,7 +1557,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 72:
 YY_RULE_SETUP
-#line 652 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 653 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
@@ -1565,7 +1569,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 73:
 YY_RULE_SETUP
-#line 661 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 662 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
@@ -1577,7 +1581,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 74:
 YY_RULE_SETUP
-#line 670 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 671 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
@@ -1589,7 +1593,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 75:
 YY_RULE_SETUP
-#line 679 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 680 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
@@ -1601,7 +1605,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 76:
 YY_RULE_SETUP
-#line 688 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 689 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
@@ -1613,7 +1617,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 77:
 YY_RULE_SETUP
-#line 697 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 698 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
@@ -1625,7 +1629,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 78:
 YY_RULE_SETUP
-#line 706 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 707 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
@@ -1637,7 +1641,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 79:
 YY_RULE_SETUP
-#line 716 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 717 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 { 
 	BEGIN multilinecomment;
 	cout << "BEGIN multilinecomment" << endl;
@@ -1645,7 +1649,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 80:
 YY_RULE_SETUP
-#line 721 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 722 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	cout << "Finish multilinecomment" << endl;
 	;
@@ -1653,7 +1657,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 81:
 YY_RULE_SETUP
-#line 726 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 727 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	cout << "new multilinecomment" << endl;
 	lineNo++;
@@ -1661,7 +1665,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 82:
 YY_RULE_SETUP
-#line 731 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 732 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 { 
 	BEGIN INITIAL;
 	cout << "lex::It Is A Multi Line Comment" << endl;
@@ -1669,7 +1673,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 83:
 YY_RULE_SETUP
-#line 736 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 737 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	BEGIN String;
 	cout << "BEGIN String" << endl;
@@ -1677,7 +1681,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 84:
 YY_RULE_SETUP
-#line 741 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 742 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	lineNo++;
 	colNo += strlen(yytext); 
@@ -1691,7 +1695,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 85:
 YY_RULE_SETUP
-#line 752 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 753 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	BEGIN INITIAL;
 	cout << "lex::This Is A String" << endl;
@@ -1699,7 +1703,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 86:
 YY_RULE_SETUP
-#line 757 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 758 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 { 
 	cout << "lex::It Is A Single Line Comment" << endl;
 	lineNo++;										
@@ -1707,7 +1711,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 87:
 YY_RULE_SETUP
-#line 762 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 763 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
@@ -1719,7 +1723,19 @@ YY_RULE_SETUP
 	YY_BREAK
 case 88:
 YY_RULE_SETUP
-#line 772 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 771 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+{
+	colNo += strlen(yytext); 
+	yylval.r.myLineNo= lineNo; 
+	yylval.r.myColno = colNo;
+	fout << "lex::NO_IDENTIFIER " << yytext << endl;
+	cout << "lex::NO_IDENTIFIER " << yytext << endl;
+	return NoId;
+}
+	YY_BREAK
+case 89:
+YY_RULE_SETUP
+#line 781 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
@@ -1730,9 +1746,9 @@ YY_RULE_SETUP
 	return INTEGER_LITERAL;
 }
 	YY_BREAK
-case 89:
+case 90:
 YY_RULE_SETUP
-#line 782 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 791 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
@@ -1743,9 +1759,9 @@ YY_RULE_SETUP
 	return REAL_LITERAL;
 }
 	YY_BREAK
-case 90:
+case 91:
 YY_RULE_SETUP
-#line 792 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 801 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 {
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
@@ -1755,12 +1771,12 @@ YY_RULE_SETUP
 	return  CHARACTER_LITERAL;
 }		
 	YY_BREAK
-case 91:
+case 92:
 YY_RULE_SETUP
-#line 802 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 811 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 ECHO;
 	YY_BREAK
-#line 1763 "lex.yy.cc"
+#line 1779 "lex.yy.cc"
 case YY_STATE_EOF(INITIAL):
 case YY_STATE_EOF(multilinecomment):
 case YY_STATE_EOF(String):
@@ -2135,7 +2151,7 @@ yy_state_type yyFlexLexer::yy_get_previous_state()
 		while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 			{
 			yy_current_state = (int) yy_def[yy_current_state];
-			if ( yy_current_state >= 242 )
+			if ( yy_current_state >= 244 )
 				yy_c = yy_meta[(unsigned int) yy_c];
 			}
 		yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
@@ -2165,11 +2181,11 @@ yy_state_type yyFlexLexer::yy_try_NUL_trans( yy_state_type yy_current_state )
 	while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 		{
 		yy_current_state = (int) yy_def[yy_current_state];
-		if ( yy_current_state >= 242 )
+		if ( yy_current_state >= 244 )
 			yy_c = yy_meta[(unsigned int) yy_c];
 		}
 	yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
-	yy_is_jam = (yy_current_state == 241);
+	yy_is_jam = (yy_current_state == 243);
 
 	return yy_is_jam ? 0 : yy_current_state;
 	}
@@ -2569,6 +2585,6 @@ int main()
 	return 0;
 	}
 #endif
-#line 802 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
+#line 811 "C:\\Users\\Ranim\\Documents\\Visual Studio 2012\\Projects\\Compare\\ConsoleApplication2 - 9 - Copy (2)\\lex.l"
 
 
