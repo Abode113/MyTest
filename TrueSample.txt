@@ -1,0 +1,100 @@
+// Variable
+using System;
+
+namespace VariableDefinition {
+
+   class Program {
+   
+      static void Main(string[] args) {
+         short a;
+         int b ;
+         double c;
+
+         /* actual initialization */
+         a = 10;
+         b = 20;
+         c = a + b;
+         //Console.WriteLine("a = {0}, b = {1}, c = {2}", a, b, c);
+         Console.ReadLine();
+      }
+   }
+}
+
+// For Loop
+using System;
+
+namespace Loops {
+
+   class Program {
+   
+      static void Main(string[] args) {
+         for (; ; ) {
+            Console.WriteLine("Hey! I am Trapped");
+         }
+      }
+   }
+}
+
+// While Loop
+ while (true)
+{
+	Console.WriteLine("Hey! I in while");
+}
+
+// doWhile Loop
+do {
+	Console.WriteLine("Hey! I am in doWhile");
+}while(true);
+
+// Array
+using System;
+
+namespace ArrayApplication {
+
+   class MyArray {
+   
+      static void Main(string[] args) {
+         int []  n = new int[10]; /* n is an array of 10 integers */
+         int i,j;
+
+         /* initialize elements of array n */
+         for ( i = 0; i < 10; i++ ) {
+            n[ i ] = i + 100;
+         }
+         Console.ReadKey();
+      }
+   }
+}
+
+// Struct
+struct Books
+{
+    public string title;
+    public string author;
+    public string subject;
+    public int book_id;
+};
+
+// Class
+class Box
+{
+   public double length;   // Length of a box
+   public double breadth;  // Breadth of a box
+   public double height;   // Height of a box
+}
+
+// Method
+class NumberManipulator {
+
+   public int FindMax(int num1, int num2) {
+      /* local variable declaration */
+      int result;
+
+      if (num1 > num2)
+         result = num1;
+      else
+         result = num2;
+
+      return result;
+   }
+}

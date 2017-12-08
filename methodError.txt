@@ -1,0 +1,11 @@
+
+method_header
+  : attributes_opt modifiers_opt type qualified_identifier OpenBracket formal_parameter_list_opt CloseBracket
+  | attributes_opt modifiers_opt VOID qualified_identifier OpenBracket formal_parameter_list_opt CloseBracket
+  | attributes_opt modifiers_opt type qualified_identifier OpenBracket block
+  { error->errQ->enqueue($<r.myLineNo>4 , $<r.myColno>4 , "Error: forget CloseBracket"," "); error->printErrQueue(); exit(1);}
+  | attributes_opt modifiers_opt type qualified_identifier CloseBracket block
+  { error->errQ->enqueue($<r.myLineNo>4 , $<r.myColno>4 , "Error: forget OpenBracket"," "); error->printErrQueue(); exit(1);}
+  | attributes_opt modifiers_opt type qualified_identifier block
+  { error->errQ->enqueue($<r.myLineNo>4 , $<r.myColno>4 , "Error: forget OpenAndCloseBracket"," "); error->printErrQueue(); exit(1);}
+  ;

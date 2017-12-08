@@ -1,0 +1,256 @@
+public class mohammad{                             
+    void main()
+    {
+        switch (F)
+        {
+            case 1: break;
+        }
+    }
+
+}
+===========================
+public class 6mohammad{                                      
+    void main()
+    {
+        switch (F)
+        {
+            case 1: break;
+        }
+    }
+
+}
+==================================================================
+public class mohammad{                         
+
+
+    void main()
+    {
+        bool condition = true;
+
+        if (condition)
+        {
+            Console.WriteLine("The variable is set to true.");
+        }
+        else
+        {
+            Console.WriteLine("The variable is set to false.");
+        }
+    }
+
+}
+====================================
+public class mohammad{                
+
+    void main()
+    {
+        else
+        {
+            Console.WriteLine("The variable is set to false.");
+        }
+    }
+
+}
+===================================================================
+public class mohammad{                           
+    void main()
+    { int x = 0;
+        do 
+        {
+            Console.WriteLine(x);
+            x++;
+        } while (x < 5);
+    }
+}
+======================================
+public class mohammad{                     
+
+
+    void main()
+    { int x = 0;
+        do 
+        {
+            Console.WriteLine(x);
+            x++;
+        }
+    }
+}
+===================================================================
+public class mohammad{                          
+    
+
+    void main()
+    {
+        int n;
+        try
+        {  
+            n = 123;
+        }
+        catch
+        {
+        }
+         
+        Console.Write(n); 
+    }
+}
+=======================================
+public class mohammad{                            
+
+
+    void main()
+    {
+        try
+        {
+            //do some
+        }
+ 
+    }
+}
+===================================================================
+public class Klass{               
+     public static int SlowFunction(int x, int y){ 
+                 Thread.Sleep(10000);
+                 return x+y; 
+     }
+}
+================================
+
+public class Klass                  
+{
+    public static int (int x, int y)
+    {
+        Thread.Sleep(10000);
+        return x + y;
+    }
+}
+===================================================================
+
+public class Klass                       
+{
+    void main()
+    {
+        int number = 1;
+        switch (number)
+        {
+            case 0:
+                Console.WriteLine("The number is zero!");
+                break;
+            case 1:
+                Console.WriteLine("The number is one!");
+                break;
+        }
+    }
+}
+======================================
+public class Klass            
+{
+    void main()
+    {
+        int number = 1;
+        switch (number)
+        {
+            case :
+                Console.WriteLine("The number is zero!");
+                break;
+            case 1:
+                Console.WriteLine("The number is one!");
+                break;
+        }
+    }
+}
+===================================================================
+public class Klass
+{
+    void main()
+    {
+
+        for (; ; )
+        {
+            x++;
+
+        }
+    }
+}
+======================================
+public class Klass
+{
+    void main()
+    {
+
+        for ( )
+        {
+            x++;
+
+        }
+    }
+}
+===================================================================
+public class Klass
+{
+    void main()
+    {
+
+        if (x>5)
+        {
+            x++;
+
+        }
+    }
+}
+========================================
+public class Klass
+{
+    void main()
+    {
+
+        if ( )
+        {
+            x++;
+
+        }
+    }
+}
+===================================================================
+public class Klass
+{
+    void main()
+    {
+
+        if (x>5)
+        {
+            x++;
+
+        }
+    }
+}
+=======================================
+public class Klass
+{
+    if (x>5)
+        {
+            x++;
+
+        }
+    void main()
+    {
+
+        
+    }
+}
+===================================================================
+public class Klass
+{
+    void main()
+    {
+        int number = 1;
+        switch (number)
+        {
+            case 5:
+                Console.WriteLine("The number is zero!");
+                break;
+            case 1:
+                Console.WriteLine("The number is one!");
+                break;
+        }
+    }
+}
+=================================

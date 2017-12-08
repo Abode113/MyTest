@@ -1,0 +1,9 @@
+Console.WriteLine("Length: {0}", length); // COMA Error
+
+Rectangle r = new Rectangle(); // when Equal
+
+Object name; // when Semicolon
+
+enum Days { Sun, Mon, tue, Wed, thu, Fri, Sat };
+
+for (char[] MyGird1 : MyGird) // Error Colon

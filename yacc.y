@@ -5,13 +5,20 @@
 	#define _CRT_SECURE_NO_WARNINGS
 	#define YYDEBUG 1
 	using namespace std;
+
 	#include <FlexLexer.h>
+	#include "ErrorRecovery.h"
+	
 	int yylex(void);
 	int yyparse();
 	void yyerror(char *);
 	
 	FlexLexer* lexer = new yyFlexLexer();
-	
+	ErrorRecovery* error = new ErrorRecovery();
+
+	int lc=0;
+	int rc=0;
+
 	class Parser
 	{
 		public:
@@ -21,13 +28,17 @@
 		}
 	};
 	
+	
+	
 %}
 
 /* Special tokens to help disambiguate rank_specifiers */
 %token RANK_SPECIFIER
 
 /* C.1.4 Tokens */
-%token IDENTIFIER 
+%token IDENTIFIER
+%token NoId 
+%token WHITE_SPACE
 %token INTEGER_LITERAL REAL_LITERAL CHARACTER_LITERAL STRING_LITERAL
 
 
@@ -47,7 +58,7 @@
 %token  STRUCT SWITCH THIS THROW TRUE
 %token  TRY TYPEOF UINT ULONG UNCHECKED
 %token  UNSAFE USHORT USING VIRTUAL VOID
-%token  VOLATILE WHILE
+%token  VOLATILE 
 %token  OpenBracket CloseBracket
 
 /* The ones that seem to be context sensitive */
@@ -60,8 +71,8 @@
 
 /*** PUNCTUATION AND SINGLE CHARACTER OPERATORS ***/
 %token COMMA  ","
-%token LEFT_BRACKET  "["
-%token RIGHT_BRACKET "]"
+%token LEFT_BRACKET 
+%token RIGHT_BRACKET 
 
 /*** MULTI-CHARACTER OPERATORS ***/
 %token PLUSEQ MINUSEQ STAREQ DIVEQ MODEQ
@@ -70,6 +81,21 @@
 
 %token CloseBracket Multiple_N1 PercenSign Division Dash Plus_S Maddeh Colon Semicolon OpenBracket_T1 OpenBracket Dot
 %token Less Greater And Shapo Vertical_Mark Ta3ajob Quest_Mark Equal CloseBracket_T1
+
+%nonassoc "then"
+%nonassoc ELSE
+
+%nonassoc "e1"
+%nonassoc WHILE
+
+%nonassoc IDENTIFIER
+%nonassoc "e10"
+
+%nonassoc "eb"
+%nonassoc Semicolon
+
+
+
 
 %start compilation_unit  
 %union{
@@ -100,24 +126,20 @@ boolean_literal
   : TRUE
   | FALSE
   ;
+ 
 /********** C.2 Syntactic grammar **********/
 
 /***** C.2.1 Basic concepts *****/
 namespace_name
   : qualified_identifier
   ;
-type_name
-  : qualified_identifier
-  ;
+
 /***** C.2.2 Types *****/
 type
-  : non_array_type{cout<<"ggG" << endl;}
+  :  simple_type{cout<<"ggG" << endl;}
   | array_type{cout<<"fff" << endl;}
   ;
-non_array_type
-  : simple_type
-  | type_name
-  ;
+
 simple_type
   : primitive_type
   | class_type
@@ -190,7 +212,7 @@ primary_expression_no_parenthesis
   | unchecked_expression
   ;
 parenthesized_expression
-  : OpenBracket expression CloseBracket
+  : OpenBracket expression CloseBracket 
   ;
 member_access
   : primary_expression Dot IDENTIFIER
@@ -198,8 +220,8 @@ member_access
   | class_type Dot IDENTIFIER
   ;
 invocation_expression
-  : primary_expression_no_parenthesis OpenBracket argument_list_opt CloseBracket
-  | qualified_identifier OpenBracket argument_list_opt CloseBracket
+  : primary_expression_no_parenthesis OpenBracket argument_list_opt CloseBracket 
+  | qualified_identifier OpenBracket argument_list_opt CloseBracket 
   ;
 argument_list_opt
   : /* Nothing */
@@ -234,10 +256,10 @@ new_expression
   : object_creation_expression
   ;
 object_creation_expression
-  : NEW type OpenBracket argument_list_opt CloseBracket
+  : NEW type OpenBracket argument_list_opt CloseBracket 
   ;
 array_creation_expression
-  : NEW non_array_type LEFT_BRACKET expression_list RIGHT_BRACKET rank_specifiers_opt array_initializer_opt
+  : NEW  simple_type LEFT_BRACKET expression_list RIGHT_BRACKET rank_specifiers_opt array_initializer_opt
   | NEW array_type array_initializer
   ;
 array_initializer_opt
@@ -245,14 +267,14 @@ array_initializer_opt
   | array_initializer
   ;
 typeof_expression
-  : TYPEOF OpenBracket type CloseBracket
-  | TYPEOF OpenBracket VOID{cout<<"yacc:void4"<<endl;} CloseBracket
+  : TYPEOF OpenBracket type CloseBracket 
+  | TYPEOF OpenBracket VOID{cout<<"yacc:void4"<<endl;} CloseBracket 
   ;
 checked_expression
   : CHECKED OpenBracket expression CloseBracket
   ;
 unchecked_expression
-  : UNCHECKED OpenBracket expression CloseBracket
+  : UNCHECKED OpenBracket expression CloseBracket 
   ;
 pointer_member_access
   : postfix_expression ARROW IDENTIFIER
@@ -261,7 +283,7 @@ addressof_expression
   : And unary_expression
   ;
 sizeof_expression
-  : SIZEOF OpenBracket type CloseBracket
+  : SIZEOF OpenBracket type CloseBracket 
   ;
 postfix_expression
   : primary_expression
@@ -297,12 +319,12 @@ unary_expression
  * semantically restricted to an identifier, optionally follwed by qualifiers
  */
 cast_expression
-  : OpenBracket expression CloseBracket unary_expression_not_plusminus
-  | OpenBracket multiplicative_expression Multiple_N1 CloseBracket unary_expression 
-  | OpenBracket qualified_identifier rank_specifier type_quals_opt CloseBracket unary_expression  
-  | OpenBracket primitive_type type_quals_opt CloseBracket unary_expression
-  | OpenBracket class_type type_quals_opt CloseBracket unary_expression
-  | OpenBracket VOID{cout<<"yacc:void5"<<endl;} type_quals_opt CloseBracket unary_expression
+  : OpenBracket expression CloseBracket unary_expression_not_plusminus 
+  | OpenBracket multiplicative_expression Multiple_N1 CloseBracket unary_expression  {  }
+  | OpenBracket qualified_identifier rank_specifier type_quals_opt CloseBracket unary_expression {  } 
+  | OpenBracket primitive_type type_quals_opt CloseBracket unary_expression {  }
+  | OpenBracket class_type type_quals_opt CloseBracket unary_expression {  }
+  | OpenBracket VOID{cout<<"yacc:void5"<<endl;} type_quals_opt CloseBracket unary_expression {  }
   ;
 type_quals_opt
   : /* Nothing */
@@ -409,7 +431,7 @@ embedded_statement
   | fixed_statement
   ;
 block
-  : OpenBracket_T1 statement_list_opt CloseBracket_T1
+  : OpenBracket_T1 {lc++; } statement_list_opt CloseBracket_T1 { rc++; }
   ;
 statement_list_opt
   : /* Nothing */
@@ -427,11 +449,12 @@ labeled_statement
   : IDENTIFIER Colon statement
   ;
 declaration_statement
-  : local_variable_declaration Semicolon{cout<<"yacc::Semicolon22"<<endl;}
+  : local_variable_declaration Semicolon{cout<<"yacc::Semicolon22"<<endl;} 
   | local_constant_declaration Semicolon{cout<<"yacc::Semicolon23"<<endl;}
   ;
 local_variable_declaration
   : type variable_declarators
+  
   ;
 variable_declarators
   : variable_declarator
@@ -475,15 +498,19 @@ selection_statement
   : if_statement
   | switch_statement
   ;
-if_statement
-  : IF OpenBracket boolean_expression CloseBracket embedded_statement
-  | IF OpenBracket boolean_expression CloseBracket embedded_statement ELSE embedded_statement
+  if_statement    
+  :  IF OpenBracket boolean_expression CloseBracket embedded_statement   %prec "then" 
+  |  IF OpenBracket boolean_expression CloseBracket embedded_statement    ELSE embedded_statement 
+  |  ELSE embedded_statement 
+  { error->errQ->enqueue($<r.myLineNo>1 , $<r.myColno>1 , "Error:you should add if "," "); error->printErrQueue(); exit(1); }
+  |  IF OpenBracket  CloseBracket embedded_statement 
+  { error->errQ->enqueue($<r.myLineNo>3 , $<r.myColno>3 , "Error:invalid expression term )"," "); error->printErrQueue(); exit(1); }
   ;
 switch_statement
-  : SWITCH OpenBracket expression CloseBracket switch_block
+  : SWITCH OpenBracket expression CloseBracket switch_block  
   ;
 switch_block
-  : OpenBracket_T1 switch_sections_opt CloseBracket_T1
+  : OpenBracket_T1 {lc++;} switch_sections_opt CloseBracket_T1 { rc++; }
   ;
 switch_sections_opt
   : /* Nothing */
@@ -503,6 +530,8 @@ switch_labels
 switch_label
   : CASE constant_expression Colon
   | DEFAULT Colon
+  | CASE Colon
+  { error->errQ->enqueue($<r.myLineNo>2 , $<r.myColno>2 , "Error:You should add constant value "," "); error->printErrQueue(); exit(1); }
   ;
 iteration_statement
   : while_statement
@@ -514,13 +543,18 @@ unsafe_statement
   : UNSAFE block
   ;
 while_statement
-  : WHILE OpenBracket boolean_expression CloseBracket embedded_statement
+  : WHILE OpenBracket boolean_expression CloseBracket embedded_statement {  }
   ;
 do_statement
-  : DO embedded_statement WHILE OpenBracket boolean_expression CloseBracket Semicolon{cout<<"yacc::Semicolon25"<<endl;}
+  : DO embedded_statement WHILE OpenBracket boolean_expression CloseBracket Semicolon{cout<<"yacc::Semicolon25"<<endl;   }  %prec "e2"
+  | DO embedded_statement %prec "e1"
+  { error->errQ->enqueue($<r.myLineNo>2 , $<r.myColno>2 , "Error:you should add while "," "); error->printErrQueue(); exit(1); }
+
   ;
 for_statement
-  : FOR OpenBracket for_initializer_opt Semicolon{cout<<"yacc::Semicolon26"<<endl;} for_condition_opt Semicolon{cout<<"yacc::Semicolon27"<<endl;} for_iterator_opt CloseBracket embedded_statement
+  : FOR OpenBracket for_initializer_opt Semicolon{cout<<"yacc::Semicolon26"<<endl;   } for_condition_opt Semicolon{cout<<"yacc::Semicolon27"<<endl;} for_iterator_opt CloseBracket embedded_statement 
+  |FOR OpenBracket  CloseBracket embedded_statement
+  { error->errQ->enqueue($<r.myLineNo>2 , $<r.myColno>2 , "Error: you should add semicolon "," "); error->printErrQueue(); exit(1); }
   ;
 for_initializer_opt
   : /* Nothing */
@@ -549,7 +583,7 @@ statement_expression_list
   | statement_expression_list COMMA statement_expression
   ;
 foreach_statement
-  : FOREACH OpenBracket type IDENTIFIER IN expression CloseBracket embedded_statement
+  : FOREACH OpenBracket type IDENTIFIER IN expression CloseBracket embedded_statement {  }
   ;
 jump_statement
   : break_statement
@@ -559,7 +593,11 @@ jump_statement
   | throw_statement
   ;
 break_statement
-  : BREAK Semicolon{cout<<"yacc::Semicolon1"<<endl;}
+  : BREAK Semicolon{cout<<"yacc::Semicolon1"<<endl;} 
+  | BREAK %prec "eb"
+  { error->errQ->enqueue($<r.myLineNo>1 , $<r.myColno>1 , "Error:you should add semicolon"," "); error->printErrQueue(); exit(1); }
+
+  
   ;
 continue_statement
   : CONTINUE Semicolon{cout<<"yacc::Semicolon2"<<endl;}
@@ -583,14 +621,21 @@ try_statement
   : TRY block catch_clauses
   | TRY block finally_clause
   | TRY block catch_clauses finally_clause
+  | TRY block 
+  { error->errQ->enqueue($<r.myLineNo>2 , $<r.myColno>2 , "Error:you should add catch or finally"," "); error->printErrQueue(); exit(1); }
+  | block catch_clauses
+  { error->errQ->enqueue($<r.myLineNo>1 , $<r.myColno>1 , "Error:you should add try"," "); error->printErrQueue(); exit(1); }
+ 
+
+
   ;
 catch_clauses
-  : catch_clause
-  | catch_clauses catch_clause
+  : catch_clause 
+  | catch_clauses catch_clause 
   ;
 catch_clause
-  : CATCH OpenBracket class_type identifier_opt CloseBracket block
-  | CATCH OpenBracket type_name identifier_opt CloseBracket block
+  : CATCH OpenBracket class_type identifier_opt CloseBracket block {  }
+  | CATCH OpenBracket qualified_identifier identifier_opt CloseBracket block {  }
   | CATCH block
   ;
 identifier_opt
@@ -607,11 +652,10 @@ unchecked_statement
   : UNCHECKED block
   ;
 lock_statement
-  : LOCK OpenBracket expression CloseBracket embedded_statement
+  : LOCK OpenBracket expression CloseBracket embedded_statement 
   ;
 using_statement
-  : USING OpenBracket resource_acquisition CloseBracket embedded_statement
-  ;
+  : USING OpenBracket resource_acquisition CloseBracket embedded_statement 
 resource_acquisition
   : local_variable_declaration
   | expression
@@ -665,7 +709,7 @@ qualifier
   | qualifier IDENTIFIER Dot 
   ;
 namespace_body
-  : OpenBracket_T1 using_directives_opt namespace_member_declarations_opt CloseBracket_T1
+  : OpenBracket_T1 {lc++;}  using_directives_opt namespace_member_declarations_opt CloseBracket_T1 {rc++;}
   ;
 using_directives
   : using_directive
@@ -730,7 +774,10 @@ modifier
   ;
 /***** C.2.6 Classes *****/
 class_declaration
-  : attributes_opt modifiers_opt CLASS{ cout<<"Yacc::Class"<<endl;} IDENTIFIER class_base_opt class_body comma_opt
+  : attributes_opt modifiers_opt CLASS{ cout<<"Yacc::Class"<<endl;} IDENTIFIER class_base_opt class_body comma_opt 
+ 
+  | attributes_opt modifiers_opt CLASS NoId class_base_opt class_body comma_opt 
+  { error->errQ->enqueue($<r.myLineNo>4 , $<r.myColno>4 , "Error:Name Error"," "); error->printErrQueue(); exit(1); }
   ;
 class_base_opt
   : /* Nothing */
@@ -742,11 +789,11 @@ class_base
   | Colon class_type COMMA interface_type_list
   ;
 interface_type_list
-  : type_name
-  | interface_type_list COMMA type_name
+  : qualified_identifier
+  | interface_type_list COMMA qualified_identifier
   ;
 class_body
-  : OpenBracket_T1{cout<<"---"<<endl;} class_member_declarations_opt CloseBracket_T1{cout<<"---"<<endl;}
+  : OpenBracket_T1{cout<<"---"<<endl;  lc++; } class_member_declarations_opt CloseBracket_T1{cout<<"---"<<endl; rc++; }
   ;
 class_member_declarations_opt
   : /* Nothing */
@@ -768,6 +815,8 @@ class_member_declaration
   | destructor_declaration
 /*  | static_constructor_declaration */
   | type_declaration
+  | statment_out_function
+  { error->errQ->enqueue($<r.myLineNo>1 , $<r.myColno>1 , "Error: Statment_Out_Function"," "); error->printErrQueue(); exit(1);}
   ;
 constant_declaration
   : attributes_opt modifiers_opt CONST type constant_declarators Semicolon{cout<<"yacc::Semicolon11"<<endl;}
@@ -781,7 +830,14 @@ method_declaration
 /* Inline return_type to avoid conflict with field_declaration */
 method_header
   : attributes_opt modifiers_opt type qualified_identifier OpenBracket formal_parameter_list_opt CloseBracket
-  | attributes_opt modifiers_opt VOID{cout<<"yacc:void6"<<endl;} qualified_identifier OpenBracket formal_parameter_list_opt CloseBracket
+  | attributes_opt modifiers_opt type NoId OpenBracket formal_parameter_list_opt CloseBracket 
+  { error->errQ->enqueue($<r.myLineNo>4 , $<r.myColno>4 , "Error:Name Error"," "); error->printErrQueue(); exit(1); }
+
+  | attributes_opt modifiers_opt type  OpenBracket formal_parameter_list_opt CloseBracket
+  { error->errQ->enqueue($<r.myLineNo>4 , $<r.myColno>4 , "Error:you should add name"," "); error->printErrQueue(); exit(1); }
+
+  | attributes_opt modifiers_opt VOID{cout<<"yacc:void6"<<endl;} qualified_identifier OpenBracket formal_parameter_list_opt CloseBracket 
+
   ;
 formal_parameter_list_opt
   : /* Nothing */
@@ -818,7 +874,7 @@ parameter_array
 property_declaration
   : attributes_opt modifiers_opt type qualified_identifier 
       ENTER_getset
-    OpenBracket_T1 accessor_declarations CloseBracket_T1
+    OpenBracket_T1 {lc++;} accessor_declarations CloseBracket_T1 {rc++;} 
       EXIT_getset
   ;
 accessor_declarations
@@ -853,7 +909,7 @@ event_declaration
   : attributes_opt modifiers_opt EVENT type variable_declarators Semicolon{cout<<"yacc::Semicolon15"<<endl;}
   | attributes_opt modifiers_opt EVENT type qualified_identifier 
       ENTER_accessor_decl 
-    OpenBracket_T1 event_accessor_declarations CloseBracket_T1
+    OpenBracket_T1  { lc++; } event_accessor_declarations CloseBracket_T1 {rc++;}
       EXIT_accessor_decl
   ;
 event_accessor_declarations
@@ -875,12 +931,12 @@ remove_accessor_declaration
 indexer_declaration
   : attributes_opt modifiers_opt indexer_declarator 
       ENTER_getset
-    OpenBracket_T1 accessor_declarations CloseBracket_T1
+    OpenBracket_T1 { lc++; } accessor_declarations CloseBracket_T1 { rc++; }
       EXIT_getset
   ;
 indexer_declarator
   : type THIS LEFT_BRACKET formal_parameter_list RIGHT_BRACKET
-/* | type type_name Dot THIS LEFT_BRACKET formal_parameter_list RIGHT_BRACKET */
+/* | type qualified_identifier Dot THIS LEFT_BRACKET formal_parameter_list RIGHT_BRACKET */
   | type qualified_this LEFT_BRACKET formal_parameter_list RIGHT_BRACKET
   ;
 qualified_this
@@ -895,8 +951,8 @@ operator_declarator
   | conversion_operator_declarator
   ;
 overloadable_operator_declarator
-  : type OPERATOR overloadable_operator OpenBracket type IDENTIFIER CloseBracket
-  | type OPERATOR overloadable_operator OpenBracket type IDENTIFIER COMMA type IDENTIFIER CloseBracket
+  : type OPERATOR overloadable_operator OpenBracket type IDENTIFIER CloseBracket 
+  | type OPERATOR overloadable_operator OpenBracket type IDENTIFIER COMMA type IDENTIFIER CloseBracket 
   ;
 overloadable_operator
   : Plus_S | Dash 
@@ -905,9 +961,8 @@ overloadable_operator
   | LTLT | GTGT | EQEQ | NOTEQ | Greater | Less | GEQ | LEQ
   ;
 conversion_operator_declarator
-  : IMPLICIT OPERATOR type OpenBracket type IDENTIFIER CloseBracket
-  | EXPLICIT OPERATOR type OpenBracket type IDENTIFIER CloseBracket
-  ;
+  : IMPLICIT OPERATOR type OpenBracket type IDENTIFIER CloseBracket 
+  | EXPLICIT OPERATOR type OpenBracket type IDENTIFIER CloseBracket 
 constructor_declaration
   : attributes_opt modifiers_opt constructor_declarator constructor_body
   ;
@@ -919,13 +974,13 @@ constructor_initializer_opt
   | constructor_initializer
   ;
 constructor_initializer
-  : Colon BASE OpenBracket argument_list_opt CloseBracket
-  | Colon THIS OpenBracket argument_list_opt CloseBracket
+  : Colon BASE OpenBracket argument_list_opt CloseBracket 
+  | Colon THIS OpenBracket argument_list_opt CloseBracket 
   ;
 /* Widen from unsafe_opt STATIC to modifiers_opt */
 /* This is now subsumed by constructor_declaration - delete
  * static_constructor_declaration
- *  : attributes_opt modifiers_opt IDENTIFIER OpenBracket CloseBracket block
+ *  : attributes_opt modifiers_opt IDENTIFIER OpenBracket CloseBracket block 
  *  ;
  */
 /* No longer needed after modification of static_constructor_declaration
@@ -936,7 +991,7 @@ constructor_initializer
  */
 /* Widen from unsafe_opt to modifiers_opt */
 destructor_declaration
-  : attributes_opt modifiers_opt Maddeh IDENTIFIER OpenBracket CloseBracket block
+  : attributes_opt modifiers_opt Maddeh IDENTIFIER OpenBracket CloseBracket block 
   ;
 operator_body
   : block
@@ -959,7 +1014,7 @@ struct_interfaces
   : Colon interface_type_list
   ;
 struct_body
-  : OpenBracket_T1 struct_member_declarations_opt CloseBracket_T1
+  : OpenBracket_T1 {lc++;} struct_member_declarations_opt CloseBracket_T1 {rc++;}
   ;
 struct_member_declarations_opt
   : /* Nothing */
@@ -984,8 +1039,8 @@ struct_member_declaration
 
 /***** C.2.8 Arrays *****/
 array_initializer
-  : OpenBracket_T1 variable_initializer_list_opt CloseBracket_T1
-  | OpenBracket_T1 variable_initializer_list COMMA CloseBracket_T1
+  : OpenBracket_T1  variable_initializer_list_opt CloseBracket_T1 
+  | OpenBracket_T1  variable_initializer_list COMMA CloseBracket_T1 
   ;
 variable_initializer_list_opt
   : /* Nothing */
@@ -1008,7 +1063,7 @@ interface_base
   : Colon interface_type_list
   ;
 interface_body
-  : OpenBracket_T1 interface_member_declarations_opt CloseBracket_T1
+  : OpenBracket_T1 {lc++;}  interface_member_declarations_opt CloseBracket_T1  {rc++;}
   ;
 interface_member_declarations_opt
   : /* Nothing */
@@ -1026,8 +1081,8 @@ interface_member_declaration
   ;
 /* inline return_type to avoid conflict with interface_property_declaration */
 interface_method_declaration
-  : attributes_opt new_opt type IDENTIFIER OpenBracket formal_parameter_list_opt CloseBracket interface_empty_body
-  | attributes_opt new_opt VOID{cout<<"yacc:void2"<<endl;} IDENTIFIER OpenBracket formal_parameter_list_opt CloseBracket interface_empty_body
+  : attributes_opt new_opt type IDENTIFIER OpenBracket formal_parameter_list_opt CloseBracket interface_empty_body 
+  | attributes_opt new_opt VOID{cout<<"yacc:void2"<<endl;} IDENTIFIER OpenBracket formal_parameter_list_opt CloseBracket interface_empty_body {  }
   ;
 new_opt
   : /* Nothing */
@@ -1036,14 +1091,14 @@ new_opt
 interface_property_declaration
   : attributes_opt new_opt type IDENTIFIER 
       ENTER_getset
-    OpenBracket_T1 interface_accessors CloseBracket_T1
+    OpenBracket_T1 {lc++;} interface_accessors CloseBracket_T1  {rc++;}
       EXIT_getset
   ;
 interface_indexer_declaration
   : attributes_opt new_opt type THIS 
     LEFT_BRACKET formal_parameter_list RIGHT_BRACKET 
       ENTER_getset
-    OpenBracket_T1 interface_accessors CloseBracket_T1
+    OpenBracket_T1 {lc++;} interface_accessors CloseBracket_T1 {rc++;}
       EXIT_getset
   ;
 
@@ -1060,7 +1115,7 @@ interface_event_declaration
 /* mono seems to allow this */
 interface_empty_body
   : Semicolon{cout<<"yacc::Semicolon18"<<endl;}
-  | OpenBracket_T1 CloseBracket_T1
+  | OpenBracket_T1 {lc++;} CloseBracket_T1 {rc++;}
   ;
 
 /***** C.2.10 Enums *****/
@@ -1075,8 +1130,8 @@ enum_base
   : Colon integral_type
   ;
 enum_body
-  : OpenBracket_T1 enum_member_declarations_opt CloseBracket_T1
-  | OpenBracket_T1 enum_member_declarations COMMA CloseBracket_T1
+  : OpenBracket_T1   enum_member_declarations_opt CloseBracket_T1 
+  | OpenBracket_T1   enum_member_declarations COMMA CloseBracket_T1 
   ;
 enum_member_declarations_opt
   : /* Nothing */
@@ -1093,7 +1148,7 @@ enum_member_declaration
 
 /***** C.2.11 Delegates *****/
 delegate_declaration
-  : attributes_opt modifiers_opt DELEGATE return_type IDENTIFIER OpenBracket formal_parameter_list_opt CloseBracket Semicolon{cout<<"yacc::Semicolon19"<<endl;}
+  : attributes_opt modifiers_opt DELEGATE return_type IDENTIFIER OpenBracket formal_parameter_list_opt CloseBracket Semicolon{cout<<"yacc::Semicolon19"<<endl;  }
   ;
 
 /***** C.2.12 Attributes *****/
@@ -1138,12 +1193,24 @@ attribute_arguments_opt
   | attribute_arguments
   ;
 attribute_name
-  : type_name
+  : qualified_identifier
   ;
 attribute_arguments
-  : OpenBracket expression_list_opt CloseBracket
+  : OpenBracket expression_list_opt CloseBracket {  }
   ;
-
+statment_out_function
+  : if_statement
+  | switch_statement
+  | break_statement
+  | continue_statement
+  | goto_statement
+  | return_statement
+  | throw_statement
+  | while_statement
+  | do_statement
+  | for_statement
+  | foreach_statement
+  ;
 
 
 /** Dummy rules for those context-sensitive "keywords" **/
@@ -1182,8 +1249,20 @@ int yylex()
 void main(void)
 {
 	yydebug = 1;
-	freopen("code.txt","r",stdin);
+	freopen("code.cs","r",stdin);
    	freopen("out.txt","w",stdout);
 	Parser* p = new Parser();
 	p->parse();
+	
+	
+	if(lc == rc)
+	{
+	}
+
+	else{
+	cout<<"Bracket missing";
+	}
+
+	
+	
 }

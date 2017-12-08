@@ -22,7 +22,11 @@ Float					[-+]?[0-9]+\.?[0-9]+
 Integer					[-+]?[1-9][0-9]*|0
 Char					"'"."'"
 Identifier              [a-zA-Z_][a-zA-Z0-9_]*
-Identifierr              [a-zA-Z_][a-zA-Z0-9_]*"("
+NoId                    [0-9][a-zA-Z_][a-zA-Z0-9_]*
+
+white_space            [ \t\n\r]
+rank_specifier         "["{white_space}*(","{white_space}*)*"]"
+
 
 %%
 
@@ -356,7 +360,8 @@ Identifierr              [a-zA-Z_][a-zA-Z0-9_]*"("
 }
 
 " "		{
-	colNo += 1; 
+		colNo += 1; 
+		
 }
 
 \+		{
@@ -448,22 +453,13 @@ Identifierr              [a-zA-Z_][a-zA-Z0-9_]*"("
 }
 
 
-\*=		{
+\*		{
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
 	yylval.r.myColno = colNo;
 	fout << "lex::STAREQ" << endl;
 	cout << "lex::STAREQ" << endl;
 	return STAREQ;
-}
-
-\*		{
-	colNo += strlen(yytext); 
-	yylval.r.myLineNo= lineNo; 
-	yylval.r.myColno = colNo;
-	fout << "lex::Multiple_N1" << endl;
-	cout << "lex::Multiple_N1" << endl;
-	return Multiple_N1;
 }
 
 \/		{
@@ -496,9 +492,9 @@ Identifierr              [a-zA-Z_][a-zA-Z0-9_]*"("
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
 	yylval.r.myColno = colNo;
-	fout << "lex::MODEQ" << endl;
-	cout << "lex::MODEQ" << endl;
-	return MODEQ;
+	fout << "lex::DIVEQ" << endl;
+	cout << "lex::DIVEQ" << endl;
+	return DIVEQ;
 }
 
 "("		{
@@ -604,112 +600,46 @@ Identifierr              [a-zA-Z_][a-zA-Z0-9_]*"("
 	return CloseBracket_T1;
 }
 
-\^=		{
+"["		{
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
 	yylval.r.myColno = colNo;
-	fout << "lex::XOREQ" << endl;
-	cout << "lex::XOREQ" << endl;
-	return XOREQ;
+	fout << "lex::LEFT_BRACKET" << endl;
+	cout << "lex::LEFT_BRACKET" << endl;
+	return LEFT_BRACKET;
 }
 
-\|=		{
+"]"		{
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
 	yylval.r.myColno = colNo;
-	fout << "lex::OREQ" << endl;
-	cout << "lex::OREQ" << endl;
-	return OREQ;
+	fout << "lex::RIGHT_BRACKET" << endl;
+	cout << "lex::RIGHT_BRACKET" << endl;
+	return RIGHT_BRACKET;
 }
 
-\<<		{
+","		{
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
 	yylval.r.myColno = colNo;
-	fout << "lex::LTLT" << endl;
-	cout << "lex::LTLT" << endl;
-	return LTLT;
+	fout << "lex::COMMA" << endl;
+	cout << "lex::COMMA" << endl;
+	return COMMA;
 }
 
-\>>		{
-	colNo += strlen(yytext); 
-	yylval.r.myLineNo= lineNo; 
-	yylval.r.myColno = colNo;
-	fout << "lex::GTGT" << endl;
-	cout << "lex::GTGT" << endl;
-	return GTGT;
+
+
+ {rank_specifier}		{
+
+	return RANK_SPECIFIER;
 }
 
-\>>=		{
-	colNo += strlen(yytext); 
-	yylval.r.myLineNo= lineNo; 
-	yylval.r.myColno = colNo;
-	fout << "lex::GTGTEQ" << endl;
-	cout << "lex::GTGTEQ" << endl;
-	return GTGTEQ;
-}
+ {white_space}	{
 
-\<<=		{
-	colNo += strlen(yytext); 
-	yylval.r.myLineNo= lineNo; 
-	yylval.r.myColno = colNo;
-	fout << "lex::LTLTEQ" << endl;
-	cout << "lex::LTLTEQ" << endl;
-	return LTLTEQ;
-}
+ fout << "lex::WHITE_SPACE" << endl;
+	cout << "lex::WHITE_SPACE" << endl;
 
-\==		{
-	colNo += strlen(yytext); 
-	yylval.r.myLineNo= lineNo; 
-	yylval.r.myColno = colNo;
-	fout << "lex::EQEQ" << endl;
-	cout << "lex::EQEQ" << endl;
-	return EQEQ;
-}
-
-\!=		{
-	colNo += strlen(yytext); 
-	yylval.r.myLineNo= lineNo; 
-	yylval.r.myColno = colNo;
-	fout << "lex::NOTEQ" << endl;
-	cout << "lex::NOTEQ" << endl;
-	return NOTEQ;
-}
-
-\<=		{
-	colNo += strlen(yytext); 
-	yylval.r.myLineNo= lineNo; 
-	yylval.r.myColno = colNo;
-	fout << "lex::LEQ" << endl;
-	cout << "lex::LEQ" << endl;
-	return LEQ;
-}
-
-\>=		{
-	colNo += strlen(yytext); 
-	yylval.r.myLineNo= lineNo; 
-	yylval.r.myColno = colNo;
-	fout << "lex::GEQ" << endl;
-	cout << "lex::GEQ" << endl;
-	return GEQ;
-}
-
-\&&		{
-	colNo += strlen(yytext); 
-	yylval.r.myLineNo= lineNo; 
-	yylval.r.myColno = colNo;
-	fout << "lex::ANDAND" << endl;
-	cout << "lex::ANDAND" << endl;
-	return ANDAND;
-}
-
-\&=		{
-	colNo += strlen(yytext); 
-	yylval.r.myLineNo= lineNo; 
-	yylval.r.myColno = colNo;
-	fout << "lex::ANDEQ" << endl;
-	cout << "lex::ANDEQ" << endl;
-	return ANDEQ;
+	return WHITE_SPACE;
 }
 
 
@@ -738,15 +668,8 @@ Identifierr              [a-zA-Z_][a-zA-Z0-9_]*"("
 	cout << "BEGIN String" << endl;
 }
 
-<String>(\\.|[^"\\])*		{
+<String>"*"+[^*/\n]*		{
 	lineNo++;
-	colNo += strlen(yytext); 
-	yylval.r.myLineNo= lineNo; 
-	yylval.r.myColno = colNo;
-	string s = yytext; 
-	fout << "lex::STRING_LITERAL" << yytext << endl;
-	cout << "lex::STRING_LITERAL" << yytext << endl;
-	return STRING_LITERAL;
 }
 
 <String>\"		{
@@ -759,6 +682,7 @@ Identifierr              [a-zA-Z_][a-zA-Z0-9_]*"("
 	lineNo++;										
 }
 
+
 {Identifier}		{
 	colNo += strlen(yytext); 
 	yylval.r.myLineNo= lineNo; 
@@ -766,6 +690,14 @@ Identifierr              [a-zA-Z_][a-zA-Z0-9_]*"("
 	fout << "lex::IDENTIFIER " << yytext << endl;
 	cout << "lex::IDENTIFIER " << yytext << endl;
 	return IDENTIFIER;
+}
+{NoId} {
+	colNo += strlen(yytext); 
+	yylval.r.myLineNo= lineNo; 
+	yylval.r.myColno = colNo;
+	fout << "lex::NO_IDENTIFIER " << yytext << endl;
+	cout << "lex::NO_IDENTIFIER " << yytext << endl;
+	return NoId;
 }
 
 
@@ -796,7 +728,11 @@ Identifierr              [a-zA-Z_][a-zA-Z0-9_]*"("
 	fout << "lex::CHARACTER_LITERAL" << endl;
 	cout << "lex::CHARACTER_LITERAL" << endl;
 	return  CHARACTER_LITERAL;
-}		
+}	
+
+
+
+	
 									
 
 %%
